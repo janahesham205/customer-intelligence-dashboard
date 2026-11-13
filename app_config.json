@@ -1,0 +1,22 @@
+{
+  "features": [
+    "Recency",
+    "Frequency",
+    "Monetary",
+    "AvgOrderValue",
+    "CustomerTenure",
+    "Spend_Last90d",
+    "Orders_Last90d"
+  ],
+  "rfm_cols": [
+    "Recency",
+    "Frequency",
+    "Monetary"
+  ],
+  "selected_model": "Random Forest (log target)",
+  "training_cutoff": "2011-09-10 12:50:00",
+  "scored_as_of": "2011-12-09 12:50:01",
+  "test_mae": 392.7880346145598,
+  "test_rmse": 1451.3367577413874,
+  "test_r2": 0.46919539412314404
+}

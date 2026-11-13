@@ -1,0 +1,5 @@
+Cluster,Customers,Recency,Frequency,Monetary,Actual_Future90_Mean,Zero_Spend_Rate,Share_of_customers,Segment,Base_Segment,Recommended_Action
+0,1588,196.073677581864,5.164357682619648,2033.0874622166248,334.43804156171285,0.5314861460957179,0.302130898021309,At-Risk,At-Risk,Win back: reminder emails with a time-limited offer before they churn.
+1,2121,341.8892032060349,1.4233851956624233,342.1756624233852,162.65883545497408,0.7967939651107968,0.4035388127853881,Lost / Inactive,Lost / Inactive,Reactivate cheaply: low-cost email campaign; stop spending if no response.
+2,672,31.665178571428573,2.738095238095238,758.3800297619048,390.3937202380953,0.44047619047619047,0.1278538812785388,Loyal / Potential,Loyal / Potential,"Grow: cross-sell and upsell offers, encourage one more order per quarter."
+3,875,30.656,19.381714285714285,10545.024102857144,2117.0235885714283,0.15657142857142858,0.1664764079147641,Champions,Champions,"Reward: loyalty perks, early access to new products, personalised recommendations."
