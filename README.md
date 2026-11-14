@@ -22,7 +22,7 @@ Retail teams need to prioritize retention and marketing effort. This project com
 | **Random Forest (log target) — deployed model** | **392.79** | **1451.34** | **0.469** |
 | Last-90-day spend baseline | 399.47 | 1630.69 | 0.330 |
 
-**Important:** Gradient Boosting (log target) has better held-out MAE, RMSE, and R² than the exported Random Forest. The deployed artifact is nevertheless Random Forest (log target), as recorded in `app_config.json`. The reason for that selection should be checked against the notebook's selection criteria before claiming it is the overall best model.
+**Model selection:** The notebook selected **Random Forest (log target)** using the lowest tuned **5-fold cross-validation MAE on training data** (£442.48), compared with £453.57 for Gradient Boosting (log target). The held-out test set was reserved for final evaluation, not model selection. Gradient Boosting subsequently achieved better test metrics, which is a useful finding for future validation; it does not retroactively change the predefined selection criterion.
 
 ## Dashboard features
 1. **Overview:** scored customers, historical revenue, predicted next-90-day revenue, and segment counts.
@@ -40,6 +40,8 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
+To reproduce model training, obtain the UCI Online Retail II workbook and place it at the notebook’s expected path as `online_retail_II.xlsx`. The workbook is not required to run the dashboard with the exported artifacts.
+
 Keep `app.py`, `app_config.json`, the CSV exports, and both `.pkl` model files in the same directory. Example lookup: **Customer ID `12347`** (if using the provided scoring export).
 
 ## Repository contents
@@ -49,7 +51,7 @@ Keep `app.py`, `app_config.json`, the CSV exports, and both `.pkl` model files i
 - `segment_info.csv`, `revenue_at_stake.csv`, `model_results.csv` — dashboard summaries
 - `customer_spending_model.pkl`, `customer_segmentation_pipeline.pkl` — fitted model artifacts
 - `requirements.txt` — application dependencies
-- `Customer_Lifetime_Value_Final_Project.ipynb` — **add the original notebook to this repository for reproducibility**
+- `Customer_Lifetime_Value_Final_Project (7) (1).ipynb` — original analysis and model-training notebook
 
 ## Limitations and responsible use
 - Historical data and customer behavior may not represent today's market.
@@ -59,4 +61,4 @@ Keep `app.py`, `app_config.json`, the CSV exports, and both `.pkl` model files i
 - Re-train and validate models on newer data before operational use.
 
 ## Suggested future improvements
-Evaluate the selection criterion behind the deployed model, compare against the stronger Gradient Boosting result, monitor drift, and test marketing actions through controlled experiments.
+Re-evaluate Random Forest and Gradient Boosting on new out-of-time data, monitor drift, and test marketing actions through controlled experiments.
